@@ -1,4 +1,4 @@
-name = "mathematical_pendulum_using_the_Runge_Kutta_method"
+name = "Mathematical_pendulum_using_the_Runge_Kutta_method"
 uuid = "aec42b6d-de28-4da3-8514-d43c91dd5007"
 authors = ["lovc21 <jakob.dekleva@gmail.com>"]
 version = "0.1.0"
