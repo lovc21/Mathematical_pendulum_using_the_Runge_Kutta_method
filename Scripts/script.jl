@@ -10,7 +10,7 @@ theta0 = deg2rad(30) # initial angle
 dtheta0 = deg2rad(1) # initial angular velocity
 
 times = range(0, stop=t, length=n)
-displacement = nihalo(l, t, theta0, dtheta0, n, g)
+displacement = nihalo(l, t, theta0, 1dtheta0, n, g)
 
 plot(times, displacement, xlabel="Time (s)", ylabel="Displacement (rad)", label="Pendulum")
 title!("Displacement of a Pendulum over Time")
@@ -23,8 +23,8 @@ title!("Displacement of a Harmonic Oscillator over Time")
 
 dtheta0_array = range(0, stop=3, length=100)
 
-periods = [period(l, t, theta0, dtheta, n) for dtheta in dtheta0_array]
-energies = [energy(l, theta0, dtheta) for dtheta in dtheta0_array]
+periods = [period(l, t, theta0, dtheta, n,g) for dtheta in dtheta0_array]
+energies = [energy(l, theta0, dtheta,g) for dtheta in dtheta0_array]
 
 plot(energies, periods, seriestype=:scatter)
 xlabel!("Energy")

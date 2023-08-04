@@ -29,7 +29,7 @@ Parameters:
 Returns:
     The total energy of the pendulum.
 """
-function energy(l, theta, dtheta)
+function energy(l, theta, dtheta,g)
     return 0.5 * l^2 * dtheta^2 + g * l * (1 - cos(theta))
 end
 
@@ -44,7 +44,7 @@ Parameters:
 Returns:    
     The period of the pendulum.
 """
-function period(l, t, theta0, dtheta0, n)
+function period(l, t, theta0, dtheta0, n,g)
     theta = nihalo(l, t, theta0, dtheta0, n, g)
     h = t / n  # time step
     t_half_period = argmin(abs.(theta .- theta0)) * h

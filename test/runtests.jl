@@ -14,7 +14,7 @@ end
 # Test 2: Energy Function
 @testset "Test 2: Energy Function" begin
     l, theta, dtheta = 1, 0.1, 0.5
-    result = energy(l, theta, dtheta)
+    result = energy(l, theta, dtheta,g)
     expected = 0.5 * l^2 * dtheta^2 + g * l * (1 - cos(theta))
     @test result ≈ expected
 end
@@ -22,7 +22,7 @@ end
 # Test 3: Derivatives Function
 @testset "Test 3: Derivatives Function" begin
     y, l = [0.1, 0.5], 1
-    result = derivatives(y, l)
+    result = derivatives(y, l,g)
     expected = [0.5, -g/l * sin(0.1)]
     @test result ≈ expected
 end
