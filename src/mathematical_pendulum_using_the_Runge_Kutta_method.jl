@@ -59,7 +59,7 @@ Parameters:
 Returns:
     A vector containing the derivatives of the angular displacement and velocity .
 """
-function derivatives( y,l)
+function derivatives( y,l,g)
     theta, v = y
     return [v, -g/l * sin(theta)]
 end
@@ -83,10 +83,10 @@ function nihalo(l, t, theta0, dtheta0, n,g)
     theta_vals = [theta0]  # store the solution here
 
     for _ in 1:n-1  # loop over time steps
-        k1 = h .* derivatives(y, l)
-        k2 = h .* derivatives(y + 0.5 .* k1, l)
-        k3 = h .* derivatives(y + 0.5 .* k2, l)
-        k4 = h .* derivatives(y + k3, l)
+        k1 = h .* derivatives(y, l, g)
+        k2 = h .* derivatives(y + 0.5 .* k1, l, g)
+        k3 = h .* derivatives(y + 0.5 .* k2, l, g )
+        k4 = h .* derivatives(y + k3, l,g)
         y += (k1 + 2 .* k2 + 2 .* k3 + k4) / 6.0
         push!(theta_vals, y[1])
     end 
