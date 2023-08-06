@@ -7,7 +7,11 @@ In this repository, you can finde the code for Homework 4 of the Numerical Metho
 
 To run the code, it is necessary to have Julia installed on your computer. Once downloaded, you can run the Scripts/script.jl file to see the results of the code. The results are in a forme of 3 grafs. First graf shows the "Displacement of a Pendulum over Time" the second graf shows the "Displacement of a Harmonic Oscillator over Time" and the last graf shows "Period of a Pendulum as a Function of Energy".
 
-The code is working and the working of the Pendulum is documented using Documenter.jl. To see the documentation, you can run the `docs/make.jl` file. The documentation is also available online at [documentation](https://lovc21.github.io/Mathematical_pendulum_using_the_Runge_Kutta_method.jl/dev/).
+<p align="center">
+  <img width="460" height="300" src="./images/Oscillating_pendulum.gif">
+</p>
+
+The code and the working of the Pendulum is documented using Documenter.jl. To see the documentation, you can run the `docs/make.jl` file. The documentation is also available online at [documentation](https://lovc21.github.io/Mathematical_pendulum_using_the_Runge_Kutta_method.jl/dev/).
 
 TLDR the documntacion. 
 Here are the results of the code: 

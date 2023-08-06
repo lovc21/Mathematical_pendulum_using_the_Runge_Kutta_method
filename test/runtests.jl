@@ -38,7 +38,7 @@ end
 # Test 5: Period Function
 @testset "Test 5: Period Function" begin
     l, t, theta0, dtheta0, n = 1, 10, 0.1, 0, 1000
-    result = period(l, t, theta0, dtheta0, n)
+    result = period(l, t, theta0, dtheta0, n,g)
     theta_vals = nihalo(l, t, theta0, dtheta0, n, g)
     h = t / n
     t_half_period = argmin(abs.(theta_vals .- theta0)) * h
