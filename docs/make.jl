@@ -11,7 +11,7 @@ makedocs(
 # See "Hosting Documentation" and deploydocs() in the Documenter manual
 # for more information.
 deploydocs(
-    repo = "github.com/lovc21/Mathematical_pendulum_using_the_Runge_Kutta_method",
+    repo = "github.com/lovc21/Mathematical_pendulum_using_the_Runge_Kutta_method.git",
     push_preview = true,
     devbranch = "main",
 )
