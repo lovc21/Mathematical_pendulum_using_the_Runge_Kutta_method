@@ -1,5 +1,5 @@
 using Documenter
-using mathematical_pendulum_using_the_Runge_Kutta_method
+using Mathematical_pendulum_using_the_Runge_Kutta_method
 
 makedocs(
     sitename = "Mathematical_pendulum_using_the_Runge_Kutta_method",
