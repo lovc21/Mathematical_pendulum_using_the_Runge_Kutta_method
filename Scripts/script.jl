@@ -21,26 +21,15 @@ harmonic_displacement = harmonic_oscillator.(l, t_array, theta0, dtheta0,g)
 plot(t_array, harmonic_displacement,xlabel = "Time (s)", ylabel="Displacement (rad)" , label="Harmonic Oscillator")
 title!("Displacement of a Harmonic Oscillator over Time")
 
+
 dtheta0_array = range(0, stop=3, length=100)
+periods = []
+energies = []
 
-periods = [period(l, t, theta0, dtheta, n,g) for dtheta in dtheta0_array]
-energies = [energy(l, theta0, dtheta,g) for dtheta in dtheta0_array]
-
-plot(energies, periods, seriestype=:scatter)
-xlabel!("Energy")
-ylabel!("Period (s)")
-title!("Period of a Pendulum as a Function of Energy")
-
-
-step_sizes = [100, 500, 1000, 2000]
-results = []
-
-for n in step_sizes
+for dtheta0 in dtheta0_array
     displacement = nihalo(l, t, theta0, dtheta0, n, g)
-    push!(results, displacement)
+    push!(periods, find_period(displacement, t/n))
+    push!(energies, energy(l, theta0, dtheta0, g))
 end
 
-# Plot the results
-for (i, result) in enumerate(results)
-    plot(times[1:length(result)], result, label="Step size = $(step_sizes[i])")
-end
+plot(energies, periods, seriestype=:scatter, xlabel="Energy", ylabel="Period (s)", title="Period of a Pendulum as a Function of Energy")

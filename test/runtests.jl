@@ -45,5 +45,6 @@ end
     t_half_period = argmin(abs.(theta_vals .- theta0)) * h
     expected = 2 * t_half_period
     @test result ≈ expected
+
 end
 

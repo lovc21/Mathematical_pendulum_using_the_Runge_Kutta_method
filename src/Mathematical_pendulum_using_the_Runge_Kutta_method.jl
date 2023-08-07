@@ -3,7 +3,7 @@ module Mathematical_pendulum_using_the_Runge_Kutta_method
 using Plots
 using LinearAlgebra
 
-export harmonic_oscillator, energy, period, nihalo, derivatives
+export harmonic_oscillator, energy, period, nihalo, derivatives, find_period
 
 """ 
 harmonic_oscillator calculates the displacement of a harmonic oscillator at a given time.
@@ -93,6 +93,19 @@ function nihalo(l, t, theta0, dtheta0, n,g)
     
     return theta_vals
 
+end
+
+"""
+find_period is designed to compute the period of oscillation for the pendulum by identifying the time between two consecutive peaks. 
+Parameters:
+    displacement: vector containing the angular displacement of the pendulum at each time step
+    h: step size
+Returns:
+    The period of the pendulum.
+"""
+function find_period(displacement, h)
+    peaks = findall(diff(sign.(diff(displacement))) .< 0)
+    return peaks[2] * h - peaks[1] * h
 end
 
 end # module mathematical_pendulum_using_the_Runge_Kutta_method
