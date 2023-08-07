@@ -1,5 +1,6 @@
+
 using Test
-using .Mathematical_pendulum_using_the_Runge_Kutta_method
+using Mathematical_pendulum_using_the_Runge_Kutta_method
 
 g = 9.80665 # gravitational acceleration for Earth
 
